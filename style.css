@@ -22,7 +22,7 @@ body {
     min-height: 100vh;
     background: #132141;
     overflow-x: hidden;
-     font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 #main {
@@ -165,16 +165,23 @@ option {
         flex-direction: column;
         justify-content: flex-start;
     }
-    .filtre *{
-        font-size: 25px;
+
+ 
+    .filtre h1 {
+        font-size: 20px;
     }
-    .filtre{
+    .filtre select{
+        font-size: 20px;
+    }
+
+    .filtre {
         justify-content: flex-start;
-        margin:  0 0 20px 0;
+        margin: 0 0 20px 0;
     }
+
     .search,
     .filtre,
-    #divcard{
+    #divcard {
         width: 100%;
         padding: 0 50px 0 50px;
     }
@@ -266,21 +273,45 @@ th {
         width: 60%;
     }
 }
-#del{
+
+#del {
     width: 100px;
     height: 25px;
     font-size: 20px;
     border: 1px solid;
-    border-radius: 5px ;
+    border-radius: 5px;
     background-color: #78a7ff;
     cursor: pointer;
     transition-duration: 0.5s;
 }
-#del:hover{
+
+#del:hover {
     border: 2px solid;
 }
 
 tfoot td {
     border: 2px solid;
     background-color: #4c7ff5;
+}
+
+@media (max-width : 450px) {
+    header {
+        height: 200px;
+        width: 100%;
+    }
+
+    #main {
+        padding: 0 5px;
+    }
+
+    nav {
+        padding: 5px;
+    }
+
+    .filtre h1 {
+        font-size: 15px;
+    }
+    .filtre select{
+        font-size: 15px;
+    }
 }
