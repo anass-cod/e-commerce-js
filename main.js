@@ -110,6 +110,7 @@ function tableafficher() {
     table.innerHTML = tr
     gettotalprix()
 }
+var isCardOpen = false;
 function opncard() {
     if (innerWidth < 1000) {
         card.style.left = "0"
@@ -117,14 +118,20 @@ function opncard() {
     else if (innerWidth > 1000) {
         card.style.left = "40%"
     }
-
+    isCardOpen = true
 }
 function clo() {
     card.style.left = "100%"
+    isCardOpen = false
 }
 window.onresize = () => {
-    if (card.style.left !== "100%") {
-        opncard()
+    if (isCardOpen) {
+        if (innerWidth < 1000) {
+            card.style.left = "0"
+        }
+        else if (innerWidth > 1000) {
+            card.style.left = "40%"
+        }
     }
 }
 function del(id) {

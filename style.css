@@ -160,24 +160,23 @@ option {
 }
 
 @media (max-width:950px) {
-
-    .filtre h1 {
-        letter-spacing: 1px;
-        font-size: 21px;
-    }
-
-    .filtre button {
-        width: 30px;
-        height: 30px;
-    }
-
     nav {
         padding: 10px;
+        flex-direction: column;
+        justify-content: flex-start;
     }
-
-    nav select {
-        font-size: 23px;
-        width: 142px;
+    .filtre *{
+        font-size: 25px;
+    }
+    .filtre{
+        justify-content: flex-start;
+        margin:  0 0 20px 0;
+    }
+    .search,
+    .filtre,
+    #divcard{
+        width: 100%;
+        padding: 0 50px 0 50px;
     }
 }
 
