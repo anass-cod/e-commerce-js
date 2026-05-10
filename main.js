@@ -59,11 +59,17 @@ function read() {
 read()
 var select = document.getElementById('fil')
 select.onchange = function () {
-    if (select.value === "de") { var hf = { ...produit }.sort((a, b) => b.prix - a.prix) }
-    else if (select.value == "cr") { var hf = { ...produit }.sort((a, b) => a.prix - b.prix) }
-    else { read() }
-    let content = ""
-    display(hf)
+    let hf;
+    if (select.value === "de") {
+        hf = [...produit].sort((a, b) => b.prix - a.prix);
+    }
+    else if (select.value === "cr") {
+        hf = [...produit].sort((a, b) => a.prix - b.prix);
+    }
+    else {
+        read();
+        return;}
+    display(hf);
 }
 var add
 if (localStorage.add != null) { add = JSON.parse(localStorage.add) }
