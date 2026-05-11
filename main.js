@@ -68,7 +68,8 @@ select.onchange = function () {
     }
     else {
         read();
-        return;}
+        return;
+    }
     display(hf);
 }
 var add
@@ -148,17 +149,19 @@ function del(id) {
 function gettotal(id) {
     var inpquan = document.getElementById(`inpquan${id}`)
     var tota = document.getElementById(`tota${id}`)
-    if (inpquan.value >= 1) {
+    if (inpquan.value > 0) {
         let tol = add[id].prix * Number(inpquan.value)
         tota.innerHTML = tol
+        add[id].quant = Number(inpquan.value)
     }
     else {
         tota.innerHTML = add[id].prix
+        add[id].quant = 1
     }
-    add[id].quant = Number(inpquan.value)
     localStorage.add = JSON.stringify(add)
     gettotalprix()
 }
+
 var val = document.getElementById("inputsearch")
 function search() {
     let content = ""
